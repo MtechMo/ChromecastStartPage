@@ -1,0 +1,203 @@
+@import url(http://fonts.googleapis.com/css?family=Italianno|Open+Sans+Condensed:300,700,300italic);
+
+// Parallax code is a modified version of http://codepen.io/romuloctba/pen/hCsGq
+// Nav is a modified version of http://tympanus.net/codrops/2010/07/16/slide-down-box-menu/
+// Nav requires at least 1024px width
+
+body {
+  background-size: cover !important;
+}
+
+.parallax { // Oversize these in order to avoid clipping on frame movement
+  width: 110%;
+  height: 110%;
+  position: relative;
+  z-index: -1;
+}
+
+#base-layer {
+  display: none;
+}
+
+#content-box {
+  position: absolute;
+  padding: 20px;
+  bottom: 295px;
+  left: 20px;
+  margin: 0 0 0 0;
+  z-index: 500;
+  width: 500px;
+  background: rgba(255,255,255,.5);
+  border: 1px solid whitesmoke;
+  h1 {
+    width: 100%;
+    display: block;
+    font-size: 3.4em;
+    font-family: 'Italianno', cursive;
+    font-weight: normal;
+    color:brown;
+    text-shadow: 2px 2px 0px #ffffff;
+    filter: dropshadow(color=#ffffff, offx=1, offy=1);
+    margin: 0;
+  }
+  p {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 1.3em;
+    text-align: left;
+  }
+}
+
+.parallax-img {
+  position: fixed;
+  z-index: -1;
+}
+
+
+/*!
+ * Slide Down Box Menu
+ * @author : Mary Lou (@crnacura)
+ * @uri : http://tympanus.net/codrops/2010/07/16/slide-down-box-menu/
+ * @description : Modified by Imperative Ideas (@imperativeideas) to be
+ * SCSS friendly and to use dynamic sizing
+*/
+
+// Element Sizes
+$sdt-img-size: 140px; // The base image & container size (default: 170px)
+$sdt-head-size: 20px; // The menu item title (default: 24px)
+$sdt-desc-size: 10px; // The menu item description (default: 10px)
+$sdt-sub-size: 14px;  // The submenu font size (default: 14px)
+$sdt-wrap-size: 16px; // Pads the main menu item's top (default: 25px)
+
+// Element Colors
+$sdt-menu-background: rgba(160, 160, 160, 0.6);
+$sdt-submenu-background: rgb(20,20,20);
+$sdt-text-shadows: 1px 1px 1px rgba(20,20,20,.4);
+
+.menu-container {
+  position: absolute;
+  bottom: ($sdt-img-size+1); // add one to avoid flashing ths scrollbar!
+  background: $sdt-menu-background;
+}
+
+ul.sdt_menu{
+  margin:0;
+  padding:0;
+  list-style: none;
+  font-family:"Myriad Pro", "Trebuchet MS", sans-serif;
+  font-size:$sdt-sub-size;
+  width:auto;
+  a{
+    text-decoration:none;
+    outline:none;
+  }
+  li{
+    float:left;
+    width:$sdt-img-size;
+    height:($sdt-img-size/2);
+    position:relative;
+    cursor:pointer;
+    > a{
+      position:absolute;
+      top:0px;
+      left:0px;
+      width:$sdt-img-size;
+      height:($sdt-img-size/2);
+      z-index:12;
+      //background:transparent url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/72900/overlay.png) no-repeat bottom right;
+      //background-size: cover;
+    }
+    a {
+      img{
+        border:none;
+        position:absolute;
+        width:0px;
+        height:0px;
+        bottom:0px;
+        left:($sdt-img-size/2);
+        z-index:100;
+        -moz-box-shadow:0px 0px 4px #000;
+        -webkit-box-shadow:0px 0px 4px #000;
+        box-shadow:0px 0px 4px #000;
+      }
+    }
+    span {
+      &.sdt_wrap{
+        position:absolute;
+        top:$sdt-wrap-size;
+        left:0px;
+        width:$sdt-img-size;
+        height:($sdt-img-size/2.8333);
+        z-index:15;
+      }
+      &.sdt_active{
+        position:absolute;
+        background:$sdt-submenu-background;
+        top:($sdt-img-size/2);
+        width:$sdt-img-size;
+        height:0px;
+        left:0px;
+        z-index:14;
+        -moz-box-shadow:0px 0px 4px #000 inset;
+        -webkit-box-shadow:0px 0px 4px #000 inset;
+        box-shadow:0px 0px 4px #000 inset;
+      }
+      &.sdt_link {
+        margin-left:15px;
+        text-transform:uppercase;
+        text-shadow:$sdt-text-shadows;
+      }
+      &.sdt_descr,
+      div.sdt_box a{
+        margin-left:15px;
+        text-transform:uppercase;
+      }
+      &.sdt_link{
+        color:#fff;
+        font-size:$sdt-head-size;
+        float:left;
+        clear:both;
+      }
+      &.sdt_descr{
+        color:#0B75AF;
+        float:left;
+        clear:both;
+        //width:155px; /*For dumbass IE7*/
+        font-size:$sdt-desc-size;
+        letter-spacing:1px;
+      }
+    }
+    div.sdt_box{
+      display:block;
+      position:absolute;
+      width:$sdt-img-size;
+      padding-left: 15px;
+      overflow:hidden;
+      height:$sdt-img-size;
+      top:($sdt-img-size/2);
+      left:0px;
+      display:none;
+      background:#000;
+      a{
+        float:left;
+        clear:both;
+        line-height:30px;
+        color:#0B75AF;
+        &:first-child{
+          margin-top:15px;
+        }
+        &:hover{
+          color:#fff;
+        }       
+      }
+    }
+  }
+}
+
+
+// Hide some stuff for the CodePen preview
+@media screen and (max-width: 1024px) {
+  .menu-container, #content-box {
+    display:none; 
+  }
+}
+

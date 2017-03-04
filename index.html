@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="UTF-8">
+<title>Landing Page Concept</title>
+<script src="http://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="normalize.min.css">
+<link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+<div class="bgM" id="content-box">
+<!-- Content should start here -->
+    
+<p id="time"></p>
+    
+</div>    
+    
+    
+    
+
+<script>
+document.getElementById("time").innerHTML = Date();
+</script>
+    
+    
+<!-- Content should end here -->
+    
+    
+<script>
+      !function(d,s,id){var js,
+          fjs=d.getElementsByTagName(s)[0],
+          p=/^http:/.test(d.location)?'http':'https';
+                        if(!d.getElementById(id)){js=d.createElement(s);
+                                                  js.id=id;
+                                                  js.src=p+'://platform.twitter.com/widgets.js';
+                                                  fjs.parentNode.insertBefore(js,fjs);
+                                                 }
+                       }(document, 'script', 'twitter-wjs');
+</script>
+      
+</div>
+
+
+		
+<!-- LEAVE the rain drops unless you know what you are doing, however is still customizable -->
+    <!-- uncomment if you want the raindrops to show, it will only look good with a white background
+
+<div class="parallax-img" data-vel_x="0.01" data-vel_y="0.011" data-offset_x="-30" data-offset_y="-30" style="background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/72900/blur-water-drops.png) repeat; width: 110%; height: 110%;"></div>
+
+<div class="parallax-img" data-vel_x="0.04" data-vel_y="0.04" data-offset_x="-30" data-offset_y="-30" style="background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/72900/water-drops.png) repeat; width: 110%; height: 110%;"></div>
+
+     -->
+    
+    
+<!-- Photo background should start here and must be at least at 1920x1080 HD or at Ultra HD which are higher to look great -->
+ 
+    
+    
+<div id="base-layer">
+  <img src="https://s3.amazonaws.com/cclandingpage/ultrahd/IMG_259268.jpg" class="bgM"/>
+  <img src="https://s3.amazonaws.com/cclandingpage/ultrahd/IMG_259271.jpg" class="bgM"/>
+  <img src="https://s3.amazonaws.com/cclandingpage/ultrahd/IMG_259272.jpg" class="bgM"/>
+  <img src="https://s3.amazonaws.com/cclandingpage/ultrahd/IMG_259273.jpg" class="bgM"/>
+  <img src="https://s3.amazonaws.com/cclandingpage/ultrahd/IMG_259274.jpg" class="bgM"/>
+  <img src="https://s3.amazonaws.com/cclandingpage/ultrahd/IMG_259275.jpg" class="bgM"/>
+  <img src="https://s3.amazonaws.com/cclandingpage/ultrahd/IMG_259276.jpg" class="bgM"/>
+</div>
+    
+<form><button type="button" id="castme">Click To Cast</button></form>
+    
+    
+<!-- Leave this hosted scripts below alone -->
+<script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
+<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
+<script src="js/index.js"></script>
+<script src="js/script.js"></script>
+<script src="js/rotator.js"></script>
+
+</body>
+</html>
